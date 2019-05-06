@@ -21,6 +21,12 @@
                         Failed Jobs
                     </router-link>
                 </li>
+
+                <li class="nav-item">
+                    <router-link class="nav-link" active-class="active" href="/web/logout">
+                        Logout
+                    </router-link>
+                </li>
             </ul>
 
             <router-view/>
