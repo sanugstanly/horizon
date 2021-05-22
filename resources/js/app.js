@@ -22,7 +22,7 @@ if (token) {
     axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 }
 
-window.axios.defaults.headers.common['Authorization'] = `Bearer ${window.$cookies.get('auth_token')}`
+axios.defaults.headers.common['Authorization'] = `Bearer ${window.$cookies.get('auth_token')}`
 
 Vue.use(VueRouter);
 Vue.use(VueCookies)
