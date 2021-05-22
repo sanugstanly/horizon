@@ -3,6 +3,7 @@ import Base from './base';
 import axios from 'axios';
 import Routes from './routes';
 import VueRouter from 'vue-router';
+import VueCookies from 'vue-cookies'
 import VueJsonPretty from 'vue-json-pretty';
 
 window.Popper = require('popper.js').default;
@@ -21,7 +22,10 @@ if (token) {
     axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 }
 
+window.axios.defaults.headers.common['Authorization'] = `Bearer ${window.$cookies.get('auth_token')}`
+
 Vue.use(VueRouter);
+Vue.use(VueCookies)
 
 Vue.prototype.$http = axios.create();
 
